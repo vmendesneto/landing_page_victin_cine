@@ -1,0 +1,139 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Manrope:wght@400;500;700;800&display=swap');
+
+@font-face {
+  font-family: 'Bebas Neue Pro';
+  src: url('../../assets/fonts/Demo_Fonts/Fontspring-DEMO-bebasneuepro-regular.otf')
+    format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Bebas Neue Pro';
+  src: url('../../assets/fonts/Demo_Fonts/Fontspring-DEMO-bebasneuepro-bold.otf')
+    format('opentype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Bebas Neue Pro';
+  src: url('../../assets/fonts/Demo_Fonts/Fontspring-DEMO-bebasneuepro-bookitalic.otf')
+    format('opentype');
+  font-weight: 350;
+  font-style: italic;
+  font-display: swap;
+}
+
+:root {
+  --color-bg: #191919;
+  --color-surface: #202020;
+  --color-surface-soft: rgba(255, 255, 255, 0.04);
+  --color-panel: #252525;
+  --color-panel-warm: #282723;
+  --color-panel-grid: #252422;
+  --color-panel-border-mid: #252422;
+  --color-card-light: #fff9df;
+  --color-white: #fff;
+  --color-text: rgba(255, 249, 223, 0.78);
+  --color-text-strong: #fff9df;
+  --color-text-invert: #fff9df;
+  --color-text-dark: #191919;
+  --color-text-muted: rgba(203, 203, 191, 0.72);
+  --color-primary: #30afe5;
+  --color-primary-dark: #116e96;
+  --color-primary-deep: #248fbd;
+  --color-primary-stroke: #59ceff;
+  --color-accent: #f15025;
+  --color-accent-bright: #ff8630;
+  --color-accent-glow: rgba(255, 101, 43, 0.32);
+  --color-accent-glow-soft: rgba(255, 101, 43, 0.3);
+  --color-accent-glow-strong: rgba(255, 101, 43, 0.35);
+  --color-accent-glow-muted: rgba(255, 101, 43, 0.26);
+  --color-highlight: #fff9df;
+  --color-lime: #c6d432;
+  --color-blue-glow: rgba(31, 190, 255, 0.34);
+  --color-blue-glow-soft: rgba(44, 178, 255, 0.25);
+  --color-blue-glow-strong: rgba(48, 189, 255, 0.34);
+  --color-border: rgba(203, 203, 191, 0.18);
+  --color-border-soft: rgba(203, 203, 191, 0.12);
+  --color-border-strong: rgba(255, 249, 223, 0.22);
+  --color-border-subtle: rgba(203, 203, 191, 0.14);
+  --color-card-line: #cbcbbf;
+  --color-grid-line: rgba(255, 255, 255, 0.04);
+  --color-white-glow-soft: rgba(255, 255, 255, 0.12);
+  --color-white-glow-faint: rgba(255, 255, 255, 0.04);
+  --color-watermark: rgba(255, 255, 255, 0.04);
+  --color-faq-open-bg: rgba(27, 29, 35, 0.8);
+  --color-feedback-card-start: rgba(42, 46, 53, 0.94);
+  --color-feedback-card-end: rgba(28, 30, 35, 0.98);
+  --color-audience-card-start: rgba(37, 39, 44, 0.97);
+  --color-audience-card-end: rgba(24, 26, 31, 0.99);
+  --color-bonus-bg-start: rgba(9, 18, 24, 0.95);
+  --color-bonus-bg-end: rgba(18, 22, 30, 0.95);
+  --color-software-card-start: rgba(34, 37, 43, 0.96);
+  --color-software-card-end: rgba(26, 28, 32, 0.98);
+  --shadow-soft: 0 30px 90px rgba(0, 0, 0, 0.35);
+  --shadow-card: 0 18px 42px rgba(0, 0, 0, 0.28);
+  --shadow-accent: 0 14px 36px rgba(241, 80, 37, 0.28);
+  --shadow-video: 0 26px 60px rgba(0, 0, 0, 0.22);
+  --shadow-primary-glow: 0 0 24px rgba(48, 175, 229, 0.22);
+  --gradient-accent-horizontal: linear-gradient(
+    90deg,
+    var(--color-accent) 0%,
+    var(--color-accent-bright) 100%
+  );
+  --gradient-offer-card:
+    radial-gradient(circle at 80% 20%, var(--color-accent-glow), transparent 24%),
+    radial-gradient(circle at 30% 30%, var(--color-blue-glow), transparent 35%),
+    var(--color-primary);
+  --gradient-offer-card-shadow:
+    radial-gradient(circle at 70% 30%, var(--color-accent-glow-soft), transparent 30%),
+    radial-gradient(circle at 35% 60%, var(--color-blue-glow-soft), transparent 34%);
+  --gradient-guarantee-badge:
+    radial-gradient(circle at 36% 32%, var(--color-white-glow-soft), transparent 16%),
+    radial-gradient(circle at center, var(--color-white-glow-faint), rgba(25, 25, 25, 0.96));
+  --gradient-feedback-card: linear-gradient(
+    180deg,
+    var(--color-feedback-card-start),
+    var(--color-feedback-card-end)
+  );
+  --gradient-audience-card: linear-gradient(
+    180deg,
+    var(--color-audience-card-start),
+    var(--color-audience-card-end)
+  );
+  --gradient-bonus-section:
+    radial-gradient(circle at 15% 50%, var(--color-accent-glow-strong), transparent 22%),
+    radial-gradient(circle at 43% 36%, var(--color-blue-glow-strong), transparent 25%),
+    radial-gradient(circle at 74% 46%, var(--color-accent-glow-muted), transparent 23%),
+    linear-gradient(180deg, var(--color-bonus-bg-start), var(--color-bonus-bg-end));
+  --gradient-software-card: linear-gradient(
+    180deg,
+    var(--color-software-card-start),
+    var(--color-software-card-end)
+  );
+  --gradient-module-button: linear-gradient(
+    180deg,
+    var(--color-primary) 0%,
+    var(--color-primary-dark) 100%
+  );
+  --gradient-module-button-border: linear-gradient(
+    180deg,
+    var(--color-panel-grid) 0%,
+    var(--color-primary-stroke) 100%
+  );
+  --gradient-about-panel-side-border: linear-gradient(
+    180deg,
+    var(--color-white) 0%,
+    var(--color-panel-border-mid) 100%
+  );
+  --font-display: 'Bebas Neue Pro', sans-serif;
+  --font-body: 'Manrope', sans-serif;
+  --font-ui: 'Inter', sans-serif;
+  --page-grid:
+    linear-gradient(var(--color-grid-line) 1px, transparent 1px),
+    linear-gradient(90deg, var(--color-grid-line) 1px, transparent 1px);
+}

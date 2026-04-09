@@ -1,0 +1,78 @@
+.floatingPurchaseCta {
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  z-index: 30;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  padding: 15px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 18px;
+  background: var(--color-bg);
+  box-shadow: 0 18px 48px rgba(0, 0, 0, 0.32);
+  backdrop-filter: blur(18px);
+  opacity: 0;
+  transform: translateX(18px);
+  pointer-events: none;
+  transition:
+    opacity 320ms ease,
+    transform 320ms ease;
+}
+
+.floatingPurchaseCtaVisible {
+  opacity: 1;
+  transform: translateX(0);
+  pointer-events: auto;
+}
+
+.floatingPurchaseCtaLogo {
+  display: block;
+  width: 58px;
+  height: auto;
+  flex: 0 0 auto;
+}
+
+.floatingPurchaseCtaButtonWrap > .floatingPurchaseCtaButton {
+  width: auto;
+  min-width: 0;
+  height: 46px;
+  padding: 0 14px 0 34px;
+  font-size: 14px;
+  line-height: 1;
+}
+
+.floatingPurchaseCtaButtonWrap {
+  width: 100%;
+}
+
+.floatingPurchaseCtaButtonWrap {
+  --glow-text-shift: 0px;
+}
+
+@media (max-width: 720px) {
+  .floatingPurchaseCta {
+    right: 12px;
+    bottom: 12px;
+    gap: 5px;
+    padding: 5px;
+    border-radius: 16px;
+  }
+
+  .floatingPurchaseCtaLogo {
+    width: 46px;
+  }
+
+  .floatingPurchaseCtaButtonWrap > .floatingPurchaseCtaButton {
+    height: 40px;
+    padding: 0 12px 0 30px;
+    font-size: 12px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .floatingPurchaseCta {
+    transition: none;
+  }
+}

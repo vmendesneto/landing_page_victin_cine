@@ -1,0 +1,205 @@
+.glowButton {
+  --glow-hue: 222deg;
+  --shadow-hue: 180deg;
+  --glow-text-shift: 0px;
+  --spring-easing: linear(
+    0,
+    0.002,
+    0.01 0.9%,
+    0.038 1.8%,
+    0.156,
+    0.312 5.8%,
+    0.789 11.1%,
+    1.015 14.2%,
+    1.096,
+    1.157,
+    1.199,
+    1.224 20.3%,
+    1.231,
+    1.231,
+    1.226,
+    1.214 24.6%,
+    1.176 26.9%,
+    1.057 32.6%,
+    1.007 35.5%,
+    0.984,
+    0.968,
+    0.956,
+    0.949 42%,
+    0.946 44.1%,
+    0.95 46.5%,
+    0.998 57.2%,
+    1.007,
+    1.011 63.3%,
+    1.012 68.3%,
+    0.998 84%,
+    1
+  );
+  --spring-duration: 1.33s;
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-wrap: balance;
+}
+
+.glowButton > .ctaButton {
+  position: relative;
+  overflow: visible;
+  border-radius: 8px;
+  background: linear-gradient(90deg, rgb(241, 80, 37) 0px, rgb(255, 134, 48) 100%);
+  box-shadow: none;
+  transition: all var(--spring-duration) var(--spring-easing);
+}
+
+.glowButton > .ctaButton:hover:not(:active) {
+  transform: scale(1.03);
+  filter: none;
+  box-shadow:
+    0 4px 8px -2px hsl(var(--glow-hue) 50% 20% / 50%),
+    inset 0 0 0 transparent;
+  transition-duration: calc(var(--spring-duration) * 0.5);
+}
+
+.glowButton > .ctaButton:active {
+  transform: none;
+  filter: none;
+  transition-duration: calc(var(--spring-duration) * 0.5);
+}
+
+.glowButtonContent {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.glowButtonIcon {
+  position: absolute;
+  inset: -40px;
+  border-radius: 5px;
+  mix-blend-mode: plus-lighter;
+  pointer-events: none;
+  animation: shimmer 0.75s linear infinite;
+  mask-image: conic-gradient(
+    from var(--shimmer, 0deg),
+    transparent 0%,
+    transparent 10%,
+    #000 36%,
+    #000 45%,
+    transparent 50%,
+    transparent 60%,
+    #000 85%,
+    #000 95%,
+    transparent 100%
+  );
+  mask-size: cover;
+}
+
+.glowButton > .ctaButton:hover .glowButtonIcon::before,
+.glowButton > .ctaButton:hover .glowButtonIcon::after,
+.glowButton > .ctaButton:focus-visible .glowButtonIcon::before,
+.glowButton > .ctaButton:focus-visible .glowButtonIcon::after {
+  opacity: 1;
+  animation: shine 1.2s ease-in forwards;
+}
+
+.glowButtonIcon::before,
+.glowButtonIcon::after {
+  content: '';
+  position: absolute;
+  inset: 40px;
+  border-radius: inherit;
+  opacity: 0;
+  pointer-events: none;
+  transition: 0.5s;
+  mix-blend-mode: color;
+}
+
+.glowButtonIcon::before {
+  z-index: -1;
+  box-shadow:
+    0 0 3px 2px hsl(var(--glow-hue) 20% 95%),
+    0 0 7px 4px hsl(var(--glow-hue) 20% 80%),
+    0 0 13px 4px hsl(var(--glow-hue) 50% 70%),
+    0 0 25px 5px hsl(var(--glow-hue) 100% 70%);
+}
+
+.glowButtonIcon::after {
+  z-index: 2;
+  box-shadow:
+    inset 0 0 0 1px hsl(var(--glow-hue) 70% 95%),
+    inset 0 0 2px 1px hsl(var(--glow-hue) 100% 80%),
+    inset 0 0 5px 2px hsl(var(--glow-hue) 100% 70%);
+}
+
+.glowButtonText {
+  position: relative;
+  left: var(--glow-text-shift);
+  color: rgb(255, 255, 255);
+  text-align: center;
+}
+
+@property --shimmer {
+  syntax: '<angle>';
+  inherits: false;
+  initial-value: 33deg;
+}
+
+@keyframes shimmer {
+  0% {
+    --shimmer: 0deg;
+  }
+
+  100% {
+    --shimmer: 360deg;
+  }
+}
+
+@keyframes shine {
+  0% {
+    opacity: 0;
+  }
+
+  15% {
+    opacity: 1;
+  }
+
+  55% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+@media (max-width: 1200px) {
+  .glowButton > .ctaButton {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 767px) {
+  .glowButton > .ctaButton {
+    padding-left: 32px;
+    padding-right: 8px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .glowButton > .ctaButton,
+  .glowButtonIcon::before,
+  .glowButtonIcon::after {
+    transition-duration: 0s !important;
+  }
+
+  .glowButtonIcon,
+  .glowButton > .ctaButton:hover .glowButtonIcon::before,
+  .glowButton > .ctaButton:hover .glowButtonIcon::after,
+  .glowButton > .ctaButton:focus-visible .glowButtonIcon::before,
+  .glowButton > .ctaButton:focus-visible .glowButtonIcon::after {
+    animation: none !important;
+  }
+}

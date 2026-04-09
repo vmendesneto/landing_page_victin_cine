@@ -1,0 +1,189 @@
+.heroSection {
+  --hero-gap: 28px;
+  --hero-content-col-width: 650px;
+  --hero-copy-box-width: 650px;
+  --hero-visual-width: 760px;
+  --hero-visual-edge-fade: 88px;
+  --hero-visual-right-trim: 18px;
+  --hero-padding-left: 76px;
+  --hero-padding-right: 0px;
+  position: relative;
+  width: 100%;
+  height: 640px;
+  overflow: clip;
+  background: var(--color-bg);
+}
+
+.heroSectionInner {
+  position: relative;
+  display: grid;
+  grid-template-columns: var(--hero-content-col-width) var(--hero-gap) minmax(280px, 1fr);
+  align-items: end;
+  width: 100%;
+  max-width: 100%;
+  height: 640px;
+  padding: 84px var(--hero-padding-right) 44px var(--hero-padding-left);
+  box-sizing: border-box;
+}
+
+.heroSectionContent {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: var(--hero-content-col-width);
+  max-width: var(--hero-content-col-width);
+  position: relative;
+  z-index: 1;
+}
+
+.heroSectionVisualWrap {
+  grid-column: 3;
+  position: relative;
+  display: flex;
+  justify-content: flex-end;
+  align-self: stretch;
+  margin-right: calc(var(--hero-visual-right-trim) * -1);
+  overflow: hidden;
+  min-width: 0;
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent 0,
+    #000 var(--hero-visual-edge-fade),
+    #000 100%
+  );
+  mask-image: linear-gradient(
+    to right,
+    transparent 0,
+    #000 var(--hero-visual-edge-fade),
+    #000 100%
+  );
+}
+
+.heroSectionVisual {
+  display: block;
+  align-self: start;
+  width: auto;
+  height: 100%;
+  max-width: none;
+  object-fit: contain;
+  object-position: left top;
+}
+
+.heroSectionLogoWrap {
+  display: flex;
+  justify-content: flex-start;
+  margin-bottom: 18px;
+}
+
+.heroSectionLogo {
+  display: block;
+  width: 124px;
+  height: auto;
+}
+
+.heroSectionTitle {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  /* Shared visual width for title + lead.
+     If text wrapping needs to change, adjust this before touching font sizes. */
+  width: var(--hero-copy-box-width);
+  max-width: none;
+  gap: 2px;
+  margin: 0;
+  color: var(--color-primary);
+  font-family: var(--font-display);
+  font-size: 90px;
+  font-weight: 700;
+  line-height: 0.92;
+  text-transform: uppercase;
+}
+
+.heroSectionTitle span {
+  white-space: nowrap;
+}
+
+.heroSectionLead {
+  /* Keep this width equal to the title box width so both text blocks end on the same line. */
+  width: var(--hero-copy-box-width);
+  max-width: none;
+  margin: 18px 0 40px;
+  color: var(--color-text);
+  font-family: var(--font-ui);
+  font-size: 30px;
+  font-weight: 400;
+  line-height: 1.1;
+}
+
+@media (max-width: 1080px) {
+  .heroSection {
+    --hero-gap: 22px;
+    --hero-content-col-width: 640px;
+    --hero-copy-box-width: 640px;
+    --hero-visual-width: 640px;
+    --hero-visual-edge-fade: 72px;
+    --hero-visual-right-trim: 14px;
+    --hero-padding-left: 58px;
+    --hero-padding-right: 0px;
+    height: auto;
+    min-height: 640px;
+  }
+
+  .heroSectionInner {
+    height: auto;
+    min-height: 640px;
+    grid-template-columns: var(--hero-content-col-width) var(--hero-gap) minmax(220px, 1fr);
+    padding-top: 84px;
+    padding-bottom: 56px;
+  }
+
+  .heroSectionContent {
+    width: var(--hero-content-col-width);
+    max-width: var(--hero-content-col-width);
+  }
+
+  .heroSectionTitle span {
+    white-space: normal;
+  }
+}
+
+@media (max-width: 720px) {
+  .heroSection {
+    --hero-gap: 16px;
+    --hero-content-col-width: min(100%, 640px);
+    --hero-copy-box-width: min(100%, 640px);
+    --hero-visual-edge-fade: 56px;
+    --hero-visual-right-trim: 10px;
+    --hero-padding-left: 40px;
+    --hero-padding-right: 0px;
+    min-height: auto;
+  }
+
+  .heroSectionInner {
+    grid-template-columns: minmax(0, 1fr);
+    min-height: auto;
+    height: auto;
+    padding: 72px var(--hero-padding-right) 40px var(--hero-padding-left);
+  }
+
+  .heroSectionContent {
+    width: min(100%, 640px);
+    max-width: min(100%, 640px);
+  }
+
+  .heroSectionTitle {
+    font-size: clamp(3rem, 12vw, 5rem);
+  }
+
+  .heroSectionLead {
+    font-size: clamp(1.15rem, 5vw, 1.75rem);
+  }
+
+  .heroSectionLogoWrap {
+    margin-bottom: 14px;
+  }
+
+  .heroSectionVisualWrap {
+    display: none;
+  }
+}

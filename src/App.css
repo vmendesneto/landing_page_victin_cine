@@ -1,0 +1,191 @@
+.landingPage {
+  position: relative;
+  overflow: clip;
+}
+
+.sectionTag {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 14px;
+  border: 1px solid var(--color-border-soft);
+  border-radius: 999px;
+  background: var(--color-surface-soft);
+  color: var(--color-text-muted);
+  font-size: 0.72rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+.sectionTagWithIcon {
+  gap: 15px;
+}
+
+.sectionTagWithIcon::before {
+  display: none;
+}
+
+.sectionTagIcon {
+  display: block;
+  width: 8px;
+  height: 8px;
+  object-fit: contain;
+  flex: 0 0 8px;
+}
+
+.sectionTag::before {
+  content: '';
+  width: 8px;
+  height: 8px;
+  border-radius: 999px;
+  background: var(--color-accent);
+  box-shadow: 0 0 18px var(--color-accent);
+}
+
+.ctaButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 330px;
+  height: 65px;
+  padding: 15.5px 23.5px;
+  border: 0;
+  border-radius: 12px;
+  background: var(--gradient-accent-horizontal);
+  color: var(--color-white);
+  font-size: 22px;
+  font-family: var(--font-ui);
+  font-weight: 600;
+  line-height: 1;
+  white-space: nowrap;
+  text-transform: uppercase;
+  text-decoration: none;
+  text-shadow: none;
+  box-shadow:
+    0 12px 28px rgba(0, 0, 0, 0.22),
+    0 0 0 1px rgba(255, 255, 255, 0.1) inset;
+  cursor: pointer;
+  transition:
+    transform 180ms ease,
+    filter 180ms ease,
+    box-shadow 180ms ease;
+}
+
+.ctaButtonCompact {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 46px;
+  padding: 0 18px;
+  border: 0;
+  border-radius: 12px;
+  background: var(--color-accent);
+  color: var(--color-text-dark);
+  font-size: 0.82rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  text-decoration: none;
+  box-shadow: var(--shadow-accent);
+}
+
+.landingDividerStrip {
+  --divider-strip-overlap: 28px;
+  --divider-strip-light-seam-fix: 75px;
+  --divider-strip-light-edge-trim: 40px;
+  --divider-strip-dark-seam-fix: -32px;
+  --divider-strip-dark-edge-trim: 20px;
+  position: relative;
+  left: 50%;
+  width: 100vw;
+  height: 120px;
+  margin-left: -50vw;
+  padding: 0 0 44px;
+  overflow: hidden;
+}
+
+.landingDividerStripTrack {
+  display: flex;
+  width: max-content;
+  height: 120px;
+  animation: landingDividerStripScroll 18s linear infinite;
+}
+
+.landingDividerStripSet {
+  display: flex;
+  flex: 0 0 auto;
+}
+
+.landingDividerStripSet + .landingDividerStripSet {
+  margin-left: calc((var(--divider-strip-overlap) + var(--divider-strip-dark-seam-fix) + var(--divider-strip-dark-edge-trim)) * -1);
+}
+
+.landingDividerStripPanel {
+  --divider-strip-left-trim: 0px;
+  --divider-strip-right-trim: 0px;
+  display: block;
+  width: 100vw;
+  min-width: 100vw;
+  height: 120px;
+  overflow: hidden;
+  flex: 0 0 100vw;
+}
+
+.landingDividerStripPanel + .landingDividerStripPanel {
+  margin-left: calc((var(--divider-strip-overlap) + var(--divider-strip-light-seam-fix) + var(--divider-strip-light-edge-trim)) * -1);
+}
+
+.landingDividerStripPanelForward {
+  --divider-strip-right-trim: var(--divider-strip-light-edge-trim);
+}
+
+.landingDividerStripSet + .landingDividerStripSet .landingDividerStripPanelForward {
+  --divider-strip-left-trim: calc(var(--divider-strip-overlap) + var(--divider-strip-dark-seam-fix));
+}
+
+.landingDividerStripPanelReverse {
+  --divider-strip-left-trim: calc(var(--divider-strip-overlap) + var(--divider-strip-light-seam-fix));
+  --divider-strip-right-trim: var(--divider-strip-dark-edge-trim);
+}
+
+.landingDividerStripImage {
+  display: block;
+  width: calc(100vw + var(--divider-strip-left-trim) + var(--divider-strip-right-trim));
+  min-width: calc(100vw + var(--divider-strip-left-trim) + var(--divider-strip-right-trim));
+  height: 120px;
+  object-fit: cover;
+  transform: translateX(calc(var(--divider-strip-left-trim) * -1));
+  transform-origin: left center;
+  backface-visibility: hidden;
+}
+
+@keyframes landingDividerStripScroll {
+  from {
+    transform: translateX(-200vw);
+  }
+
+  to {
+    transform: translateX(0vw);
+  }
+}
+
+.ctaButton:focus-visible {
+  outline: none;
+}
+
+.ctaButton:active {
+  transform: translateY(-1px) scale(0.985);
+  filter: brightness(0.96);
+}
+
+@media (max-width: 720px) {
+  .landingDividerStrip {
+    --divider-strip-overlap: 18px;
+    padding-bottom: 28px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ctaButton {
+    transition: none;
+  }
+}

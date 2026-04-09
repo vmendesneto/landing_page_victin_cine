@@ -1,0 +1,472 @@
+.offerSection {
+  --offer-background-reveal: 70px;
+  --offer-price-height-gap: 120px;
+  --offer-price-left-bleed: 120px;
+  width: min(1280px, calc(100% - 32px));
+  margin: clamp(-420px, calc((100vw - 20px) * -0.24), -220px) auto 0;
+  padding: 0 0 14px;
+  position: relative;
+  z-index: 1;
+}
+
+.offerSectionLayout {
+  display: grid;
+  grid-template-columns: 520px minmax(0, 1fr) minmax(0, 1fr);
+  column-gap: 0;
+  align-items: stretch;
+  width: 100%;
+}
+
+.offerSectionCopy {
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  min-width: 392px;
+  max-width: 395px;
+  min-width: 0;
+  padding-right: 14px;
+}
+
+.offerSectionTag {
+  align-self: flex-start;
+}
+
+.offerSectionSpacer {
+  min-width: 0;
+}
+
+.offerSectionVisualColumn {
+  position: relative;
+  display: flex;
+  justify-content: flex-end;
+  align-items: stretch;
+  overflow: visible;
+  min-width: 0;
+  min-height: 100%;
+}
+
+.offerSectionVisualBackground {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: calc(var(--offer-background-reveal) * -1);
+  z-index: 0;
+  display: block;
+  width: 470px;
+  max-width: none;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  pointer-events: none;
+}
+
+.offerSectionVisual {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  justify-content: flex-end;
+  align-items: stretch;
+  align-self: stretch;
+  width: calc(100% + var(--offer-price-left-bleed));
+  max-width: none;
+  min-width: 0;
+  min-height: 0;
+  margin-left: calc(var(--offer-price-left-bleed) * -1);
+  margin-right: 0;
+  margin-top: calc(var(--offer-price-height-gap) / 2);
+  margin-bottom: calc(var(--offer-price-height-gap) / 2);
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.offerSectionTitle {
+  max-width: 8ch;
+  margin: 36px 0 0;
+  color: var(--color-text-strong);
+  font-family: var(--font-ui);
+  font-size: 60px;
+  font-weight: 600;
+  line-height: 0.92;
+  letter-spacing: -0.05em;
+}
+
+.offerSectionTitleLine {
+  display: block;
+  white-space: nowrap;
+}
+
+.offerSectionList {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  width: 240px;
+  height: 507px;
+  gap: 49px;
+  margin: 28px auto 0;
+  padding: 0;
+  list-style: none;
+}
+
+.offerSectionItem {
+  position: relative;
+  padding: 0 0 0 52px;
+  width: 100%;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  color: var(--color-text);
+  font-size: 0.98rem;
+  line-height: 1.55;
+}
+
+.offerSectionItem::before {
+  content: '✓';
+  position: absolute;
+  left: 18px;
+  top: 0.2em;
+  display: grid;
+  place-items: center;
+  width: 20px;
+  height: 20px;
+  border-radius: 6px;
+  background: var(--color-lime);
+  color: var(--color-surface);
+  font-size: 0.9rem;
+  font-weight: 900;
+  line-height: 1;
+}
+
+.offerSectionPrice {
+  position: relative;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%;
+  height: 100%;
+  min-height: 100%;
+  padding: 34px 28px 28px;
+  border-radius: 8px;
+  background: linear-gradient(to top right, #6DD3FF 0%, #30AFE5 100%);
+  color: var(--color-text-dark);
+  box-shadow: var(--shadow-card);
+  overflow: hidden;
+  text-align: center;
+}
+
+.offerSectionPrice::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 75% 22%, rgba(255, 255, 255, 0.15), transparent 22%),
+    radial-gradient(circle at 18% 75%, rgba(255, 255, 255, 0.08), transparent 30%);
+  pointer-events: none;
+}
+
+.offerSectionPrice > * {
+  position: relative;
+  z-index: 1;
+}
+
+.offerSectionLogo {
+  display: block;
+  width: 132px;
+  height: auto;
+  margin-bottom: 20px;
+  filter: brightness(0) saturate(100%);
+}
+
+.offerSectionOldPrice {
+  position: relative;
+  display: block;
+  margin-bottom: 18px;
+  background: var(--gradient-accent-horizontal);
+  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+  font-family: var(--font-display);
+  font-size: 70px;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: -0.02em;
+  text-transform: none;
+}
+
+.offerSectionOldPrice::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: -15px;
+  right: -15px;
+  height: 3px;
+  background: var(--color-white);
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+
+.offerSectionOverline {
+  display: block;
+  margin-bottom: 14px;
+  color: var(--color-white);
+  font-family: var(--font-ui);
+  font-size: 35px;
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: -0.05em;
+  text-transform: none;
+}
+
+.offerSectionPriceRow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin: 0 0 12px;
+}
+
+.offerSectionCurrency {
+  color: var(--color-text-dark);
+  font-size: 1.9rem;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.offerSectionAmount {
+  color: var(--color-text-dark);
+  font-family: var(--font-display);
+  font-size: clamp(4.6rem, 11vw, 6.8rem);
+  line-height: 0.82;
+}
+
+.offerSectionPriceText {
+  margin: 8px 0 0;
+  color: var(--color-white);
+  font-family: var(--font-ui);
+  font-size: 35px;
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: -0.05em;
+}
+
+.offerSectionPriceTextLead {
+  color: var(--color-white);
+}
+
+.offerSectionPriceTextValue {
+  color: var(--color-text-dark);
+  font-weight: 600;
+}
+
+.offerSectionPriceSight {
+  margin: 0 0 24px;
+  color: var(--color-white);
+  font-family: var(--font-ui);
+  font-size: 35px;
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: -0.05em;
+}
+
+.offerSectionCta {
+  width: 330px;
+  height: 65px;
+  margin: 0;
+}
+
+.offerSectionCtaWrap {
+  display: inline-flex;
+  justify-content: center;
+}
+
+.offerSectionBrand {
+  display: block;
+  width: 85px;
+  height: 27px;
+  margin-top: 18px;
+  object-fit: contain;
+}
+
+.guaranteeSection {
+  display: grid;
+  grid-template-columns: minmax(280px, 0.82fr) minmax(0, 1fr);
+  gap: 36px;
+  align-items: center;
+  width: 885px;
+  height: 630px;
+  max-width: min(885px, calc(100% - 32px));
+  margin: 0 auto;
+  padding: 0 0 88px;
+}
+
+.guaranteeSectionVisual {
+  min-width: 0;
+}
+
+.guaranteeSectionCopy {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: auto;
+  height: auto;
+  max-width: none;
+  margin-inline: 0;
+}
+
+.guaranteeSectionImage {
+  display: block;
+  width: min(100%, 460px);
+  margin-inline: auto;
+}
+
+.guaranteeSectionTitle {
+  margin: 0;
+  background: var(--gradient-accent-horizontal);
+  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+  font-family: var(--font-display);
+  font-size: clamp(3rem, 6vw, 5.4rem);
+  line-height: 0.9;
+  text-transform: uppercase;
+}
+
+.guaranteeSectionText {
+  max-width: 34ch;
+  margin: 18px 0 0;
+  color: var(--color-text);
+  font-family: var(--font-ui);
+  font-size: 30px;
+  font-weight: 300;
+  line-height: 1.08;
+  letter-spacing: -0.05em;
+}
+
+.guaranteeSectionText strong {
+  font-weight: 600;
+}
+
+@media (max-width: 980px) {
+  .offerSectionLayout,
+  .guaranteeSection {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .offerSection {
+    --offer-background-reveal: 0px;
+    margin-top: -96px;
+  }
+
+  .offerSectionTitle,
+  .offerSectionList,
+  .guaranteeSectionText {
+    max-width: none;
+  }
+
+  .offerSectionList {
+    width: 100%;
+    height: auto;
+  }
+
+  .offerSectionCopy {
+    width: auto;
+  }
+
+  .guaranteeSection {
+    width: 100%;
+    height: auto;
+  }
+
+  .offerSectionSpacer {
+    display: none;
+  }
+
+  .offerSectionVisual {
+    justify-content: stretch;
+    min-height: auto;
+    padding: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+    width: 100%;
+    margin-right: 0;
+  }
+
+  .offerSectionVisualColumn {
+    min-height: auto;
+  }
+
+  .offerSectionVisualBackground {
+    right: 0;
+    width: 100%;
+    bottom: auto;
+  }
+
+  .guaranteeSectionImage {
+    width: min(100%, 380px);
+  }
+}
+
+@media (max-width: 640px) {
+  .offerSection,
+  .guaranteeSection {
+    width: min(100% - 24px, 1280px);
+  }
+
+  .offerSection {
+    margin-top: -48px;
+  }
+
+  .offerSectionLayout {
+    gap: 22px;
+  }
+
+  .offerSectionList {
+    gap: 28px;
+  }
+
+  .offerSectionItem {
+    padding-left: 46px;
+    font-size: 0.94rem;
+  }
+
+  .offerSectionItem::before {
+    left: 14px;
+  }
+
+  .offerSectionPrice {
+    width: 100%;
+    height: auto;
+    padding: 28px 18px 22px;
+    border-radius: 16px;
+  }
+
+  .offerSectionLogo {
+    width: 120px;
+  }
+
+  .offerSectionOldPrice {
+    font-size: 56px;
+  }
+
+  .offerSectionOverline,
+  .offerSectionPriceText,
+  .offerSectionPriceSight {
+    font-size: 28px;
+  }
+
+  .offerSectionPriceText {
+    font-size: 0.98rem;
+  }
+
+  .guaranteeSection {
+    gap: 22px;
+    padding-bottom: 76px;
+  }
+
+  .guaranteeSectionText {
+    font-size: 0.95rem;
+  }
+}

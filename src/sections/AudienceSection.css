@@ -1,0 +1,217 @@
+.audienceSection {
+  width: min(1280px, calc(100% - 32px));
+  margin: 0 auto;
+  padding: 0 0 88px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.audienceSection .sectionTag {
+  align-self: center;
+}
+
+.audienceSectionTitle {
+  max-width: 982px;
+  margin: 36px 0 0;
+  color: var(--color-text-strong);
+  font-family: var(--font-ui);
+  font-size: 60px;
+  font-weight: 600;
+  line-height: 0.92;
+  letter-spacing: -0.05em;
+  text-align: center;
+}
+
+.audienceSectionTitleLine {
+  display: block;
+  white-space: nowrap;
+}
+
+.audienceSectionGrid {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: repeat(3, 409px);
+  justify-content: center;
+  gap: 25px;
+  margin-top: 122px;
+  width: 100%;
+}
+
+.audienceSectionGridShell {
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.audienceSectionWatermarkWrap {
+  position: relative;
+  z-index: 0;
+  width: calc(100vw - 20px);
+  flex: 0 0 auto;
+  margin-top: 0;
+  transform: translateY(-70%);
+  overflow: hidden;
+  -webkit-mask-image: linear-gradient(
+    180deg,
+    transparent 0%,
+    rgba(0, 0, 0, 0.32) 8%,
+    rgba(0, 0, 0, 0.72) 18%,
+    #000 32%,
+    #000 68%,
+    rgba(0, 0, 0, 0.72) 82%,
+    rgba(0, 0, 0, 0.32) 92%,
+    transparent 100%
+  );
+  mask-image: linear-gradient(
+    180deg,
+    transparent 0%,
+    rgba(0, 0, 0, 0.32) 8%,
+    rgba(0, 0, 0, 0.72) 18%,
+    #000 32%,
+    #000 68%,
+    rgba(0, 0, 0, 0.72) 82%,
+    rgba(0, 0, 0, 0.32) 92%,
+    transparent 100%
+  );
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  pointer-events: none;
+}
+
+.audienceSectionWatermark {
+  position: relative;
+  display: block;
+  width: 100%;
+  max-width: none;
+  height: auto;
+}
+
+.audienceSectionCard {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  width: 409px;
+  min-height: 513px;
+  gap: 10px;
+  padding: 20px;
+  border: 0;
+  border-radius: 24px;
+  background: var(--gradient-audience-card);
+  box-shadow: var(--shadow-card);
+  overflow: hidden;
+}
+
+.audienceSectionCard::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border: 1px solid transparent;
+  border-radius: inherit;
+  background: linear-gradient(180deg, #ffffff 0%, #252422 30%) border-box;
+  -webkit-mask:
+    linear-gradient(#fff 0 0) padding-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask:
+    linear-gradient(#fff 0 0) padding-box,
+    linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+  pointer-events: none;
+}
+
+.audienceSectionCard::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  box-shadow: inset 0 -6px 0 var(--color-lime);
+  pointer-events: none;
+}
+
+.audienceSectionImage {
+  position: relative;
+  z-index: 1;
+  display: block;
+  width: 100%;
+  max-width: 369px;
+  aspect-ratio: 369 / 160;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+.audienceSectionBody {
+  position: relative;
+  z-index: 1;
+  width: 302px;
+  max-width: 100%;
+  margin-top: auto;
+  padding: 0 0 40px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  text-align: center;
+}
+
+.audienceSectionCardText {
+  margin: 0;
+  color: var(--color-text);
+  font-family: var(--font-ui);
+  font-size: 30px;
+  font-weight: 300;
+  line-height: 1.08;
+  letter-spacing: -0.05em;
+}
+
+.audienceSectionCardText strong {
+  color: var(--color-text-strong);
+}
+
+@media (max-width: 980px) {
+  .audienceSectionGrid {
+    grid-template-columns: 1fr;
+    justify-content: stretch;
+    margin-top: 48px;
+  }
+
+  .audienceSectionTitle {
+    max-width: 12ch;
+  }
+
+  .audienceSectionCard {
+    width: 100%;
+  }
+
+  .audienceSectionWatermark {
+    width: 100%;
+  }
+
+  .audienceSectionWatermarkWrap {
+    width: calc(100vw - 20px);
+    transform: translateY(-18%);
+  }
+}
+
+@media (max-width: 640px) {
+  .audienceSection {
+    width: min(100% - 24px, 1280px);
+    padding-bottom: 72px;
+  }
+
+  .audienceSectionCard {
+    border-radius: 18px;
+  }
+
+  .audienceSectionBody {
+    padding: 16px;
+  }
+
+  .audienceSectionCardText {
+    font-size: 24px;
+  }
+}

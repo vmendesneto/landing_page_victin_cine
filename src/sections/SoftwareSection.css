@@ -1,0 +1,260 @@
+.softwareSection {
+  --software-image-width: 800px;
+  --software-image-height: 612px;
+  --software-image-overlap: 200px;
+  --software-heading-gap: 96px;
+  --software-grid-offset: 25px;
+  position: relative;
+  width: min(1280px, calc(100% - 32px));
+  margin: 0 auto;
+  padding: 155px 0 88px;
+}
+
+.softwareSectionHeader {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  min-height: var(--software-image-height);
+}
+
+.softwareSectionImage {
+  position: absolute;
+  top: 155px;
+  left: -95px;
+  display: block;
+  width: var(--software-image-width);
+  height: var(--software-image-height);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.softwareSectionHeading {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-self: end;
+  width: 520px;
+  max-width: 100%;
+  margin-bottom: calc(
+    var(--software-image-overlap) - var(--software-grid-offset) +
+      var(--software-heading-gap)
+  );
+  text-align: right;
+}
+
+.softwareSectionTag {
+  align-self: flex-end;
+}
+
+.softwareSectionTitle {
+  width: 100%;
+  max-width: 520px;
+  margin: 36px 0 0;
+  color: var(--color-text-strong);
+  font-family: var(--font-ui);
+  font-size: 60px;
+  font-weight: 600;
+  line-height: 0.92;
+  letter-spacing: -0.05em;
+}
+
+.softwareSectionTitleLine {
+  display: block;
+  white-space: nowrap;
+}
+
+.softwareSectionGrid {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: repeat(2, 617px);
+  justify-content: center;
+  gap: 50px;
+  margin-top: calc(var(--software-grid-offset) - var(--software-image-overlap));
+}
+
+.softwareSectionCard {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 78px;
+  align-items: start;
+  width: 617px;
+  height: 370px;
+  gap: 2px;
+  padding: 60px 50px;
+  border: 0;
+  border-radius: 10px;
+  background: var(--gradient-software-card);
+  box-shadow: var(--shadow-card);
+  opacity: 1;
+  overflow: hidden;
+}
+
+.softwareSectionCard::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border: 1px solid transparent;
+  border-radius: inherit;
+  background: linear-gradient(90deg, #252422 30%, #ffffff 100%) border-box;
+  -webkit-mask:
+    linear-gradient(#fff 0 0) padding-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask:
+    linear-gradient(#fff 0 0) padding-box,
+    linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+  pointer-events: none;
+}
+
+.softwareSectionCardCopy {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  height: 100%;
+  gap: 0;
+  min-width: 0;
+}
+
+.softwareSectionCardTitle {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: 60px;
+  font-weight: 700;
+  line-height: 0.92;
+  letter-spacing: -0.05em;
+  text-transform: uppercase;
+  background: linear-gradient(45deg, #6dd3ff 0%, #30afe5 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.softwareSectionIcon {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  place-items: center;
+  width: 78px;
+  height: 78px;
+  flex: 0 0 78px;
+}
+
+.softwareSectionGlyphImage {
+  display: block;
+  width: 78px;
+  height: 78px;
+  object-fit: contain;
+}
+
+.softwareSectionCardText {
+  position: relative;
+  z-index: 1;
+  max-width: none;
+  margin: 0;
+  color: var(--color-text);
+  font-family: var(--font-ui);
+  font-size: 30px;
+  font-weight: 300;
+  line-height: 1.08;
+  letter-spacing: -0.05em;
+}
+
+@media (max-width: 980px) {
+  .softwareSectionGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .softwareSectionHeading,
+  .softwareSectionTitle,
+  .softwareSectionCardText {
+    max-width: none;
+  }
+
+  .softwareSectionHeading {
+    justify-self: stretch;
+    width: 100%;
+    align-items: flex-start;
+    margin-bottom: 0;
+    text-align: left;
+  }
+
+  .softwareSectionTag {
+    align-self: flex-start;
+  }
+
+  .softwareSectionHeader {
+    min-height: auto;
+    justify-content: flex-start;
+  }
+
+  .softwareSectionImage {
+    position: relative;
+    top: auto;
+    left: 0;
+    width: min(100%, 620px);
+    height: auto;
+    aspect-ratio: 800 / 612;
+    margin: 0 auto 24px;
+  }
+
+  .softwareSectionGrid {
+    margin-top: 32px;
+    justify-content: stretch;
+  }
+
+  .softwareSectionCard {
+    width: 100%;
+    height: auto;
+    min-height: 320px;
+    grid-template-columns: minmax(0, 1fr) 78px;
+  }
+}
+
+@media (max-width: 640px) {
+  .softwareSection {
+    width: min(100% - 24px, 1280px);
+    padding-bottom: 72px;
+  }
+
+  .softwareSectionHeader {
+    gap: 24px;
+  }
+
+  .softwareSectionTitle {
+    font-size: 42px;
+  }
+
+  .softwareSectionCard {
+    min-height: 220px;
+    gap: 24px;
+    padding: 36px 28px;
+    border-radius: 10px;
+    grid-template-columns: minmax(0, 1fr) 64px;
+  }
+
+  .softwareSectionCardCopy {
+    gap: 0;
+  }
+
+  .softwareSectionIcon {
+    width: 64px;
+    height: 64px;
+    flex-basis: 64px;
+  }
+
+  .softwareSectionGlyphImage {
+    width: 64px;
+    height: 64px;
+  }
+
+  .softwareSectionCardText {
+    font-size: 24px;
+  }
+}
