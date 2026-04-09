@@ -237,7 +237,7 @@
 .offerSectionAmount {
   color: var(--color-text-dark);
   font-family: var(--font-display);
-  font-size: clamp(8rem, 18vw, 12rem);
+  font-size: clamp(6.5rem, 15vw, 9.6rem);
   line-height: 0.82;
 }
 
