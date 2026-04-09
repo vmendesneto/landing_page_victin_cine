@@ -14,10 +14,27 @@
   background: var(--color-bg);
 }
 
+.heroSectionWatermarkViewport {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 550px;
+  height: 550px;
+  overflow: hidden;
+  pointer-events: none;
+  user-select: none;
+  z-index: 0;
+}
+
+
 .heroSectionInner {
   position: relative;
+  z-index: 1;
   display: grid;
-  grid-template-columns: var(--hero-content-col-width) var(--hero-gap) minmax(280px, 1fr);
+  grid-template-columns:
+    minmax(var(--hero-content-col-width), 1fr)
+    var(--hero-gap)
+    minmax(0, var(--hero-visual-width));
   align-items: end;
   width: 100%;
   max-width: 100%;
@@ -34,6 +51,7 @@
   max-width: var(--hero-content-col-width);
   position: relative;
   z-index: 1;
+  justify-self: center;
 }
 
 .heroSectionVisualWrap {
@@ -132,7 +150,10 @@
   .heroSectionInner {
     height: auto;
     min-height: 640px;
-    grid-template-columns: var(--hero-content-col-width) var(--hero-gap) minmax(220px, 1fr);
+    grid-template-columns:
+      minmax(var(--hero-content-col-width), 1fr)
+      var(--hero-gap)
+      minmax(0, var(--hero-visual-width));
     padding-top: 84px;
     padding-bottom: 56px;
   }
@@ -148,6 +169,20 @@
 }
 
 @media (max-width: 720px) {
+  .heroSectionWatermarkViewport {
+    width: 84px;
+    height: 64px;
+  }
+
+  .heroSectionWatermark {
+    top: 0;
+    right: 0;
+    width: 1760px;
+    height: 1652px;
+    max-width: none;
+    opacity: 0.08;
+  }
+
   .heroSection {
     --hero-gap: 16px;
     --hero-content-col-width: min(100%, 640px);

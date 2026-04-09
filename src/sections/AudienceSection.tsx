@@ -25,7 +25,10 @@ function AudienceSection() {
                 alt={card.emphasis}
                 loading="lazy"
               />
-              <div className="audienceSectionBody">
+              <div
+                className="audienceSectionBody"
+                style={card.bodyWidth ? { width: `${card.bodyWidth}px` } : undefined}
+              >
                 <p className="audienceSectionCardText">
                   <strong>{card.emphasis}</strong> {card.description}
                 </p>

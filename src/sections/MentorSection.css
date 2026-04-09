@@ -7,9 +7,19 @@
   --mentor-adjustments-height: 315px;
   width: min(1228px, 100%);
   margin: 0 auto;
-  height: 1037px;
   display: grid;
-  grid-template-rows: 925px 112px;
+  grid-template-rows: auto auto 112px;
+  padding-top: 54px;
+}
+
+.mentorSectionTabs {
+  display: block;
+  width: 1300px;
+  height: 180px;
+  max-width: none;
+  margin-bottom: 221px;
+  justify-self: center;
+  transform: translateX(-48px);
 }
 
 .mentorSectionProfile {
@@ -126,9 +136,16 @@
 
 @media (max-width: 920px) {
   .mentorSection {
-    height: auto;
-    grid-template-rows: auto auto;
+    grid-template-rows: auto auto auto;
     gap: 36px;
+    padding-top: 0;
+  }
+
+  .mentorSectionTabs {
+    width: min(100%, 1300px);
+    height: auto;
+    margin-bottom: 0;
+    transform: none;
   }
 
   .mentorSectionProfile {

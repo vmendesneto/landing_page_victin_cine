@@ -2,27 +2,32 @@
 
 @font-face {
   font-family: 'Bebas Neue Pro';
-  src: url('../../assets/fonts/Demo_Fonts/Fontspring-DEMO-bebasneuepro-regular.otf')
-    format('opentype');
-  font-weight: 400;
+  src: url('../../assets/fonts/BebasNeue-Regular.ttf') format('truetype');
+  font-weight: 100 600;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
   font-family: 'Bebas Neue Pro';
-  src: url('../../assets/fonts/Demo_Fonts/Fontspring-DEMO-bebasneuepro-bold.otf')
-    format('opentype');
-  font-weight: 700;
+  src: url('../../assets/fonts/BebasNeuePro-Bold.ttf') format('truetype');
+  font-weight: 700 900;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
   font-family: 'Bebas Neue Pro';
-  src: url('../../assets/fonts/Demo_Fonts/Fontspring-DEMO-bebasneuepro-bookitalic.otf')
-    format('opentype');
-  font-weight: 350;
+  src: url('../../assets/fonts/BebasNeue-Regular.ttf') format('truetype');
+  font-weight: 100 600;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Bebas Neue Pro';
+  src: url('../../assets/fonts/BebasNeuePro-Bold.ttf') format('truetype');
+  font-weight: 700 900;
   font-style: italic;
   font-display: swap;
 }

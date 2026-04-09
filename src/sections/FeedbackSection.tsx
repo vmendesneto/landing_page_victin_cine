@@ -39,7 +39,7 @@ function FeedbackSection() {
                 alt=""
                 aria-hidden="true"
               />
-              <span>Feedback</span>
+              <span>Feedbacks</span>
             </div>
           </div>
 

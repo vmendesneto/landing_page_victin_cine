@@ -121,9 +121,7 @@ export const bonusItems = [
   'Pack com +400 transições',
   'Pack com plugins de efeito',
   'Árvores de nodes exclusivas',
-  'Material bruto para edição',
   'Materiais de apoio para estudo',
-  'Atualizações futuras do treinamento',
 ]
 
 export const purchaseLink =
@@ -224,6 +222,7 @@ export const audienceCards = [
       'https://victincine.com.br/wp-content/uploads/2026/01/img-para-quem-2.png',
     emphasis: 'Utiliza outro programa de edição',
     description: 'e deseja migrar para a melhor plataforma do mercado.',
+    bodyWidth: 270,
   },
   {
     imageUrl:

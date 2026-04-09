@@ -2,7 +2,7 @@
   position: relative;
   width: min(1228px, calc(100% - 32px));
   margin: 0 auto;
-  padding: 98px 0 88px;
+  padding: 98px 0 215px;
 }
 
 .feedbackSectionLayout {
@@ -19,7 +19,7 @@
   flex-direction: column;
   align-items: center;
   gap: 36px;
-  width: 800px;
+  width: min(100%, 800px);
 }
 
 .feedbackSectionTagRow {
@@ -138,18 +138,21 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding-bottom: 48px;
 }
 
 .feedbackSectionWatermark {
-  position: relative;
+  position: absolute;
+  left: 50%;
+  bottom: -105px;
   z-index: 0;
   display: block;
-  flex: 0 0 auto;
   width: calc(100vw - 20px);
   max-width: none;
   height: auto;
-  margin-top: 0;
-  transform: translateY(-29%);
+  transform: translateX(-50%);
+  opacity: 0.08;
+  filter: brightness(0) saturate(100%) invert(92%);
   pointer-events: none;
 }
 
@@ -188,43 +191,100 @@
 
 @media (max-width: 920px) {
   .feedbackSection {
-    padding-top: 80px;
+    padding: 84px 0 136px;
   }
 
   .feedbackSectionLayout {
-    gap: 40px;
+    gap: 44px;
+  }
+
+  .feedbackSectionIntro {
+    gap: 30px;
+  }
+
+  .feedbackSectionSideImageWrap {
+    --feedback-side-width: clamp(108px, 18vw, 156px);
+    top: -8px;
   }
 
   .feedbackSectionTitle {
     max-width: 12ch;
-    font-size: clamp(2.8rem, 8vw, 3.75rem);
+    font-size: clamp(3rem, 6.3vw, 3.4rem);
   }
 
   .feedbackSectionGallery {
     flex-direction: column;
-    gap: 18px;
+    gap: 22px;
   }
 
   .feedbackSectionGalleryColumn {
     flex-direction: column;
-    gap: 18px;
+    gap: 22px;
   }
 
   .feedbackSectionWatermark {
     width: calc(100vw - 20px);
+    transform: translate(-50%, 2%);
+  }
+}
+
+@media (max-width: 720px) {
+  .feedbackSection {
+    width: min(1228px, calc(100% - 24px));
+    padding: 72px 0 124px;
   }
 
+  .feedbackSectionLayout {
+    gap: 36px;
+  }
+
+  .feedbackSectionIntro {
+    gap: 24px;
+  }
+
+  .feedbackSectionSideImageWrap {
+    --feedback-side-width: clamp(82px, 18vw, 112px);
+    top: -2px;
+  }
+
+  .feedbackSectionTitle {
+    font-size: clamp(2.6rem, 7.4vw, 3rem);
+  }
+
+  .feedbackSectionGallery {
+    gap: 18px;
+  }
+
+  .feedbackSectionGalleryColumn {
+    gap: 18px;
+  }
+
+  .feedbackSectionFigure {
+    border-radius: 20px;
+  }
+
+  .feedbackSectionWatermark {
+    width: calc(100vw - 16px);
+    transform: translate(-50%, 6%);
+  }
 }
 
 @media (max-width: 640px) {
   .feedbackSection {
-    width: min(100% - 24px, 1280px);
-    padding-top: 64px;
-    padding-bottom: 72px;
+    width: min(1228px, calc(100% - 24px));
+    padding: 64px 0 68px;
+  }
+
+  .feedbackSectionLayout {
+    gap: 30px;
+  }
+
+  .feedbackSectionIntro {
+    gap: 20px;
   }
 
   .feedbackSectionTitle {
-    font-size: 42px;
+    font-size: clamp(2.2rem, 9vw, 2.55rem);
   }
 
   .feedbackSectionFigure {
@@ -232,7 +292,16 @@
   }
 
   .feedbackSectionGallery {
-    gap: 18px;
+    gap: 16px;
+  }
+
+  .feedbackSectionGalleryColumn {
+    gap: 16px;
+  }
+
+  .feedbackSectionWatermark {
+    width: calc(100vw - 12px);
+    transform: translate(-50%, 8%);
   }
 
   .feedbackSectionSideImageWrap {

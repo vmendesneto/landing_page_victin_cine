@@ -1,5 +1,5 @@
 .bonusSection {
-  --bonus-gradient-height: 560px;
+  --bonus-gradient-height: 456px;
   position: relative;
   width: 100%;
   margin: 0 0 33px;
@@ -114,7 +114,7 @@
 
 @media (max-width: 640px) {
   .bonusSection {
-    --bonus-gradient-height: 520px;
+    --bonus-gradient-height: 451px;
     margin-bottom: 36px;
     padding: 76px 0 112px;
   }

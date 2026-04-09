@@ -22,9 +22,9 @@ function AboutCourseSection() {
 
       <div className="aboutCourseGrid">
         <div className="aboutCourseMediaColumn">
-          <div className="aboutCourseSectionTag aboutCourseIntroTag">
+          <div className="sectionTag sectionTagWithIcon aboutCourseIntroTag">
             <img
-              className="aboutCourseSectionTagIcon"
+              className="sectionTagIcon"
               src={porDentroIcon}
               alt=""
               aria-hidden="true"
@@ -71,9 +71,9 @@ function AboutCourseSection() {
           }`}
         >
           <div className="aboutCourseModules">
-            <div className="aboutCourseSectionTag">
+            <div className="sectionTag sectionTagWithIcon">
               <img
-                className="aboutCourseSectionTagIcon"
+                className="sectionTagIcon"
                 src={porDentroIcon}
                 alt=""
                 aria-hidden="true"

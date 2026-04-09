@@ -116,8 +116,8 @@
   border-radius: 0;
   background: transparent;
   color: var(--color-text);
-  font-size: 0.98rem;
-  line-height: 1.55;
+  font-size: 1.16rem;
+  line-height: 1.48;
 }
 
 .offerSectionItem::before {
@@ -237,7 +237,7 @@
 .offerSectionAmount {
   color: var(--color-text-dark);
   font-family: var(--font-display);
-  font-size: clamp(4.6rem, 11vw, 6.8rem);
+  font-size: clamp(8rem, 18vw, 12rem);
   line-height: 0.82;
 }
 

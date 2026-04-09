@@ -3,6 +3,10 @@
   overflow: clip;
 }
 
+.landingPage :is(h1, h2, h3, h4, h5, h6, p, li) {
+  text-wrap: balance;
+}
+
 .sectionTag {
   display: inline-flex;
   align-items: center;
@@ -46,9 +50,9 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 330px;
+  width: 360px;
   height: 65px;
-  padding: 15.5px 23.5px;
+  padding: 15.5px 34px;
   border: 0;
   border-radius: 12px;
   background: var(--gradient-accent-horizontal);

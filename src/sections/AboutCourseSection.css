@@ -54,7 +54,7 @@
 .aboutCourseIntroTag {
   width: fit-content;
   min-width: 0;
-  padding: 0 20px;
+  padding: 8px 20px;
   align-self: flex-end;
 }
 
@@ -143,40 +143,6 @@
 .aboutCourseModules {
   width: 100%;
   text-align: center;
-}
-
-.aboutCourseSectionTag {
-  display: inline-flex;
-  width: 332px;
-  height: 40px;
-  gap: 15px;
-  box-sizing: border-box;
-  padding: 0;
-  border: 1px solid var(--color-border-soft);
-  border-radius: 999px;
-  background: var(--color-bg);
-  justify-content: center;
-  align-items: center;
-}
-
-.aboutCourseSectionTag span {
-  display: inline-block;
-  color: var(--color-white);
-  font-family: var(--font-display);
-  font-size: 20px;
-  font-weight: 350;
-  font-style: italic;
-  line-height: 1;
-  white-space: nowrap;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-}
-
-.aboutCourseSectionTagIcon {
-  display: block;
-  width: 8px;
-  height: 8px;
-  object-fit: contain;
 }
 
 .aboutCourseModulesTitle {
@@ -337,7 +303,7 @@
 
 .aboutCourseModulesButtonLabel {
   font-family: var(--font-ui);
-  font-size: 30px;
+  font-size: 28px;
   font-weight: 300;
   line-height: 1;
   letter-spacing: -0.05em;
