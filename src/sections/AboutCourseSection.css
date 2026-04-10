@@ -352,10 +352,16 @@
     grid-template-columns: 1fr;
     width: min(100% - 48px, 860px);
     padding-top: 200px;
+    justify-items: center;
   }
 
   .aboutCourseMediaColumn {
     width: 100%;
+    align-items: center;
+  }
+
+  .aboutCourseIntroTag {
+    align-self: center;
   }
 
   .aboutCourseVideo {

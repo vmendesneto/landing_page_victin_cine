@@ -5,7 +5,7 @@
   --hero-visual-width: 760px;
   --hero-visual-edge-fade: 88px;
   --hero-visual-right-trim: 18px;
-  --hero-padding-left: 76px;
+  --hero-padding-left: clamp(50px, calc(100vw - 1438px), 214px);
   --hero-padding-right: 0px;
   position: relative;
   width: 100%;
@@ -135,32 +135,62 @@
 
 @media (max-width: 1080px) {
   .heroSection {
-    --hero-gap: 22px;
-    --hero-content-col-width: 640px;
-    --hero-copy-box-width: 640px;
-    --hero-visual-width: 640px;
-    --hero-visual-edge-fade: 72px;
-    --hero-visual-right-trim: 14px;
-    --hero-padding-left: 58px;
-    --hero-padding-right: 0px;
+    --hero-gap: 36px;
+    --hero-content-col-width: min(100%, 680px);
+    --hero-copy-box-width: min(100%, 680px);
+    --hero-visual-width: min(100%, 560px);
+    --hero-padding-left: 56px;
+    --hero-padding-right: 56px;
     height: auto;
-    min-height: 640px;
+    min-height: auto;
   }
 
   .heroSectionInner {
+    justify-items: center;
     height: auto;
-    min-height: 640px;
-    grid-template-columns:
-      minmax(var(--hero-content-col-width), 1fr)
-      var(--hero-gap)
-      minmax(0, var(--hero-visual-width));
-    padding-top: 84px;
-    padding-bottom: 56px;
+    min-height: auto;
+    grid-template-columns: minmax(0, 1fr);
+    gap: var(--hero-gap);
+    padding: 84px var(--hero-padding-right) 56px var(--hero-padding-left);
   }
 
   .heroSectionContent {
+    align-items: center;
     width: var(--hero-content-col-width);
     max-width: var(--hero-content-col-width);
+    text-align: center;
+  }
+
+  .heroSectionLogoWrap {
+    justify-content: center;
+  }
+
+  .heroSectionTitle {
+    align-items: center;
+    width: var(--hero-copy-box-width);
+  }
+
+  .heroSectionLead {
+    width: var(--hero-copy-box-width);
+    margin: 18px 0 32px;
+  }
+
+  .heroSectionVisualWrap {
+    grid-column: auto;
+    justify-content: center;
+    align-self: auto;
+    width: 100%;
+    margin-right: 0;
+    overflow: visible;
+    -webkit-mask-image: none;
+    mask-image: none;
+  }
+
+  .heroSectionVisual {
+    width: min(100%, var(--hero-visual-width));
+    height: auto;
+    max-width: 100%;
+    object-position: center top;
   }
 
   .heroSectionTitle span {
@@ -184,26 +214,23 @@
   }
 
   .heroSection {
-    --hero-gap: 16px;
-    --hero-content-col-width: min(100%, 640px);
-    --hero-copy-box-width: min(100%, 640px);
-    --hero-visual-edge-fade: 56px;
-    --hero-visual-right-trim: 10px;
-    --hero-padding-left: 40px;
-    --hero-padding-right: 0px;
+    --hero-gap: 28px;
+    --hero-content-col-width: min(100%, 560px);
+    --hero-copy-box-width: min(100%, 560px);
+    --hero-visual-width: min(100%, 420px);
+    --hero-padding-left: 24px;
+    --hero-padding-right: 24px;
     min-height: auto;
   }
 
   .heroSectionInner {
-    grid-template-columns: minmax(0, 1fr);
-    min-height: auto;
-    height: auto;
+    gap: var(--hero-gap);
     padding: 72px var(--hero-padding-right) 40px var(--hero-padding-left);
   }
 
   .heroSectionContent {
-    width: min(100%, 640px);
-    max-width: min(100%, 640px);
+    width: var(--hero-content-col-width);
+    max-width: var(--hero-content-col-width);
   }
 
   .heroSectionTitle {
@@ -218,7 +245,7 @@
     margin-bottom: 14px;
   }
 
-  .heroSectionVisualWrap {
-    display: none;
+  .heroSectionVisual {
+    width: min(100%, var(--hero-visual-width));
   }
 }

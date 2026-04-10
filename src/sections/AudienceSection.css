@@ -176,7 +176,8 @@
 @media (max-width: 980px) {
   .audienceSectionGrid {
     grid-template-columns: 1fr;
-    justify-content: stretch;
+    justify-content: center;
+    justify-items: center;
     margin-top: 48px;
   }
 
@@ -185,7 +186,7 @@
   }
 
   .audienceSectionCard {
-    width: 100%;
+    width: min(100%, 409px);
   }
 
   .audienceSectionWatermark {
@@ -195,6 +196,11 @@
   .audienceSectionWatermarkWrap {
     width: calc(100vw - 20px);
     transform: translateY(-18%);
+  }
+
+  .audienceSectionBody {
+    justify-content: center;
+    text-align: center;
   }
 }
 

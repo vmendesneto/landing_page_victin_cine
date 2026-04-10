@@ -180,18 +180,18 @@
   .softwareSectionHeading {
     justify-self: stretch;
     width: 100%;
-    align-items: flex-start;
+    align-items: center;
     margin-bottom: 0;
-    text-align: left;
+    text-align: center;
   }
 
   .softwareSectionTag {
-    align-self: flex-start;
+    align-self: center;
   }
 
   .softwareSectionHeader {
     min-height: auto;
-    justify-content: flex-start;
+    justify-content: center;
   }
 
   .softwareSectionImage {
@@ -206,14 +206,24 @@
 
   .softwareSectionGrid {
     margin-top: 32px;
-    justify-content: stretch;
+    justify-content: center;
+    justify-items: center;
   }
 
   .softwareSectionCard {
-    width: 100%;
+    width: min(100%, 617px);
     height: auto;
     min-height: 320px;
-    grid-template-columns: minmax(0, 1fr) 78px;
+    grid-template-columns: minmax(0, 1fr);
+    justify-items: center;
+    gap: 28px;
+    text-align: center;
+  }
+
+  .softwareSectionCardCopy {
+    align-items: center;
+    height: auto;
+    gap: 18px;
   }
 }
 
@@ -236,11 +246,11 @@
     gap: 24px;
     padding: 36px 28px;
     border-radius: 10px;
-    grid-template-columns: minmax(0, 1fr) 64px;
+    grid-template-columns: minmax(0, 1fr);
   }
 
   .softwareSectionCardCopy {
-    gap: 0;
+    gap: 16px;
   }
 
   .softwareSectionIcon {

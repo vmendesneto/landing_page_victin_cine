@@ -139,6 +139,7 @@
     grid-template-rows: auto auto auto;
     gap: 36px;
     padding-top: 0;
+    justify-items: center;
   }
 
   .mentorSectionTabs {
@@ -152,11 +153,24 @@
     grid-template-columns: 1fr;
     height: auto;
     gap: 28px;
+    justify-items: center;
+  }
+
+  .mentorSectionCopy {
+    width: min(100%, 592px);
+    height: auto;
+    align-items: center;
+    text-align: center;
+  }
+
+  .mentorSectionTag {
+    align-self: center;
   }
 
   .mentorSectionVisual {
     width: min(100%, var(--mentor-image-width));
     height: auto;
+    justify-self: center;
   }
 
   .mentorSectionImage {
@@ -176,6 +190,10 @@
     top: 0;
     left: 50%;
     width: min(70%, 450px);
+  }
+
+  .mentorSectionParagraphs {
+    margin-top: 0;
   }
 }
 

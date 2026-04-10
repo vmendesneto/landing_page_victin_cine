@@ -366,18 +366,36 @@
     max-width: none;
   }
 
+  .offerSectionLayout {
+    justify-items: center;
+    gap: 32px;
+  }
+
   .offerSectionList {
-    width: 100%;
+    width: min(100%, 320px);
     height: auto;
   }
 
   .offerSectionCopy {
-    width: auto;
+    width: min(100%, 520px);
+    align-items: center;
+    padding-right: 0;
+    text-align: center;
+  }
+
+  .offerSectionTag {
+    align-self: center;
+  }
+
+  .offerSectionTitle {
+    text-align: center;
   }
 
   .guaranteeSection {
     width: 100%;
     height: auto;
+    justify-items: center;
+    text-align: center;
   }
 
   .offerSectionSpacer {
@@ -385,27 +403,35 @@
   }
 
   .offerSectionVisual {
-    justify-content: stretch;
+    justify-content: center;
     min-height: auto;
     padding: 0;
     margin-top: 0;
     margin-bottom: 0;
     width: 100%;
     margin-right: 0;
+    margin-left: 0;
   }
 
   .offerSectionVisualColumn {
     min-height: auto;
+    width: min(100%, 520px);
+    justify-content: center;
   }
 
   .offerSectionVisualBackground {
-    right: 0;
+    right: 50%;
     width: 100%;
     bottom: auto;
+    transform: translateX(50%);
   }
 
   .guaranteeSectionImage {
     width: min(100%, 380px);
+  }
+
+  .guaranteeSectionCopy {
+    align-items: center;
   }
 }
 
