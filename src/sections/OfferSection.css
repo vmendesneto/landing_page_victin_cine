@@ -2,6 +2,8 @@
   --offer-background-reveal: 70px;
   --offer-price-height-gap: 120px;
   --offer-price-left-bleed: 120px;
+  --offer-desktop-bottom-extension: 76px;
+  --offer-desktop-vertical-shift: 10px;
   width: min(1280px, calc(100% - 32px));
   margin: clamp(-420px, calc((100vw - 20px) * -0.24), -220px) auto 0;
   padding: 0 0 14px;
@@ -48,16 +50,17 @@
 .offerSectionVisualBackground {
   position: absolute;
   top: 0;
-  bottom: 0;
+  bottom: calc(var(--offer-desktop-bottom-extension) * -1);
   right: calc(var(--offer-background-reveal) * -1);
   z-index: 0;
   display: block;
   width: 470px;
   max-width: none;
-  height: 100%;
+  height: calc(100% + var(--offer-desktop-bottom-extension));
   object-fit: cover;
   object-position: center;
   pointer-events: none;
+  transform: translateY(var(--offer-desktop-vertical-shift));
 }
 
 .offerSectionVisual {
@@ -73,8 +76,8 @@
   min-height: 0;
   margin-left: calc(var(--offer-price-left-bleed) * -1);
   margin-right: 0;
-  margin-top: calc(var(--offer-price-height-gap) / 2);
-  margin-bottom: calc(var(--offer-price-height-gap) / 2);
+  margin-top: calc((var(--offer-price-height-gap) / 2) + var(--offer-desktop-vertical-shift));
+  margin-bottom: calc((var(--offer-price-height-gap) / 2) - var(--offer-desktop-bottom-extension) - var(--offer-desktop-vertical-shift));
   padding: 0;
   box-sizing: border-box;
 }
@@ -229,7 +232,7 @@
 
 .offerSectionCurrency {
   color: var(--color-text-dark);
-  font-size: 1.9rem;
+  font-size: 30px;
   font-weight: 800;
   line-height: 1;
 }
@@ -237,7 +240,7 @@
 .offerSectionAmount {
   color: var(--color-text-dark);
   font-family: var(--font-display);
-  font-size: clamp(6.5rem, 15vw, 9.6rem);
+  font-size: clamp(104px, 15vw, 194px);
   line-height: 0.82;
 }
 
@@ -357,6 +360,8 @@
 
   .offerSection {
     --offer-background-reveal: 0px;
+    --offer-desktop-bottom-extension: 0px;
+    --offer-desktop-vertical-shift: 0px;
     margin-top: -96px;
   }
 
