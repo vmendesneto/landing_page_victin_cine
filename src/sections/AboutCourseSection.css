@@ -352,12 +352,14 @@
     grid-template-columns: 1fr;
     width: min(100% - 48px, 860px);
     padding-top: 200px;
+    gap: 124px;
     justify-items: center;
   }
 
   .aboutCourseMediaColumn {
     width: 100%;
     align-items: center;
+    gap: 84px;
   }
 
   .aboutCourseIntroTag {
@@ -373,8 +375,9 @@
 
   .aboutCourseText {
     width: 100%;
-    max-width: 420px;
+    max-width: 520px;
     height: auto;
+    margin-top: 0;
     align-items: center;
     text-align: center;
     gap: 20px;
@@ -392,6 +395,11 @@
     justify-content: center;
   }
 
+  .aboutCourseTitle,
+  .aboutCourseDescription {
+    text-align: center;
+  }
+
   .aboutCourseModulesDetails {
     width: 100%;
   }
@@ -400,10 +408,31 @@
     width: min(100% - 48px, 860px);
   }
 
+  .aboutCourseModulesTitle {
+    width: min(100%, 512px);
+    height: auto;
+    margin: 36px auto 72px;
+  }
+
+  .aboutCourseModulesTitleLine {
+    white-space: normal;
+  }
+
+  .aboutCourseModulesPanelExpanded {
+    height: auto;
+  }
+
   .aboutCourseModulesGrid {
+    width: 100%;
     grid-template-columns: 1fr;
     justify-items: center;
     gap: 25px;
+  }
+
+  .aboutCourseModulesEntry,
+  .aboutCourseModulesButton {
+    width: 100%;
+    max-width: 500px;
   }
 }
 
@@ -425,6 +454,16 @@
   .aboutCourseGrid {
     width: min(100% - 24px, 860px);
     padding-top: 156px;
+    gap: 136px;
+  }
+
+  .aboutCourseMediaColumn {
+    gap: 96px;
+  }
+
+  .aboutCourseText {
+    max-width: 100%;
+    margin-top: 0;
   }
 
   .aboutCourseDescription {
@@ -440,6 +479,11 @@
     padding: 24px 18px 22px;
   }
 
+  .aboutCourseModulesEntry,
+  .aboutCourseModulesButton {
+    max-width: 100%;
+  }
+
   .aboutCourseModulesGrid {
     grid-template-columns: 1fr;
     justify-items: center;
@@ -447,6 +491,24 @@
   }
 
   .aboutCourseModulesTitle {
+    width: 100%;
+    margin: 28px auto 48px;
     font-size: clamp(2rem, 9vw, 2.6rem);
+  }
+
+  .aboutCourseModulesButton {
+    height: auto;
+    min-height: 84px;
+    padding: 18px;
+  }
+
+  .aboutCourseModulesButtonLabel {
+    font-size: clamp(1.05rem, 4.8vw, 1.35rem);
+    line-height: 1.15;
+  }
+
+  .aboutCourseModulesList {
+    padding-left: 18px;
+    font-size: clamp(1rem, 4.2vw, 1.2rem);
   }
 }

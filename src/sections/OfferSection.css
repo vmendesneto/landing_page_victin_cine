@@ -417,13 +417,12 @@
     min-height: auto;
     width: min(100%, 520px);
     justify-content: center;
+    overflow: hidden;
+    border-radius: 16px;
   }
 
   .offerSectionVisualBackground {
-    right: 50%;
-    width: 100%;
-    bottom: auto;
-    transform: translateX(50%);
+    display: none;
   }
 
   .guaranteeSectionImage {
