@@ -117,11 +117,11 @@ export const moduleTopics: Record<string, string[]> = {
 }
 
 export const bonusItems = [
-  'Módulo extra com edições na prática',
+  'Materiais de apoio para estudo',
   'Pack com +400 transições',
   'Pack com plugins de efeito',
   'Árvores de nodes exclusivas',
-  'Materiais de apoio para estudo',
+  'Módulo extra com edições na prática',
 ]
 
 export const purchaseLink =
