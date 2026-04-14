@@ -234,7 +234,7 @@ export const audienceCards = [
 
 export const accessItems = [
   'Mais de 100 aulas para dominar o melhor software de edição do mercado',
-  'Conteúdo sempre atualizado com novas aulas exclusivas',
+  // 'Conteúdo sempre atualizado com novas aulas exclusivas',
   'Módulos completos de edição, Color Grading e VFX na aba Fusion',
   'Pack com +400 transições, plugins de efeitos, árvores de nodes exclusivas e muito mais',
 ]

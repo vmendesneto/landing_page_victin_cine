@@ -56,10 +56,10 @@ function AboutCourseSection() {
 
           <div className="aboutCourseCopy">
             <h2 className="aboutCourseTitle">
-              O DaVinci não é tão difícil quanto você imagina.
+              O DaVinci não é tão dificíl como você imagina.
             </h2>
             <p className="aboutCourseDescription">
-              E eu vou te explicar o porquê.
+              E eu vou te explicar o <strong>porquê</strong>.
             </p>
           </div>
         </div>

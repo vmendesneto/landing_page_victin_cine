@@ -1,7 +1,7 @@
 .audienceSection {
   width: min(1280px, calc(100% - 32px));
   margin: 0 auto;
-  padding: 0 0 88px;
+  padding: 40px 0 88px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -211,7 +211,7 @@
 @media (max-width: 640px) {
   .audienceSection {
     width: min(100% - 24px, 1280px);
-    padding-bottom: 72px;
+    padding: 28px 0 72px;
   }
 
   .audienceSectionCard {

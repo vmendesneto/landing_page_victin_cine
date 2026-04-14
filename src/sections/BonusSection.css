@@ -103,7 +103,7 @@
   left: 50%;
   top: var(--bonus-gradient-height);
   z-index: 2;
-  width: 330px;
+  width: 360px;
   margin: 0;
   transform: translate(-50%, -50%);
 }
@@ -179,7 +179,7 @@
 
   .bonusSectionCtaWrap {
     width: 100%;
-    max-width: 330px;
+    max-width: 360px;
   }
 
   .bonusSectionCtaWrap .ctaButton {
