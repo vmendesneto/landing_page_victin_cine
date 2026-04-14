@@ -2,7 +2,7 @@ import mentorVisual from '../../assets/icons/perfil.png'
 import mentorMark from '../../assets/icons/mentor.svg'
 import mentorshipBadge from '../../assets/icons/mentoria.svg'
 import adjustmentsCard from '../../assets/icons/ajustes.png'
-import tabsIcon from '../../assets/icons/abas.svg'
+import tabsIcon from '../../assets/icons/abas2.png'
 import porDentroIcon from '../../assets/icons/por_dentro.svg'
 import './MentorSection.css'
 
@@ -15,7 +15,6 @@ function MentorSection() {
         alt=""
         aria-hidden="true"
       />
-
       <div className="mentorSectionProfile">
         <div className="mentorSectionCopy">
           <div className="sectionTag sectionTagWithIcon mentorSectionTag">
