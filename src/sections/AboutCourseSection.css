@@ -352,14 +352,14 @@
   }
 
   .aboutCourseSection::before {
-    top: 210px;
+    top: 120px;
     height: 620px;
   }
 
   .aboutCourseGrid {
     grid-template-columns: 1fr;
     width: min(100% - 48px, 860px);
-    padding-top: 200px;
+    padding-top: 88px;
     gap: 124px;
     justify-items: center;
   }
@@ -451,7 +451,7 @@
   }
 
   .aboutCourseSection::before {
-    top: 180px;
+    top: 96px;
     height: 480px;
   }
 
@@ -461,7 +461,7 @@
 
   .aboutCourseGrid {
     width: min(100% - 24px, 860px);
-    padding-top: 156px;
+    padding-top: 56px;
     gap: 136px;
   }
 
