@@ -211,7 +211,7 @@
 @media (max-width: 640px) {
   .audienceSection {
     width: min(100% - 24px, 1280px);
-    padding: 28px 0 72px;
+    padding: 28px 0 44px;
   }
 
   .audienceSectionCard {

@@ -4,8 +4,9 @@
   --offer-price-left-bleed: 120px;
   --offer-desktop-bottom-extension: 76px;
   --offer-desktop-vertical-shift: 10px;
+  --offer-section-offset: -500px;
   width: min(1280px, calc(100% - 32px));
-  margin: clamp(-420px, calc((100vw - 20px) * -0.24), -220px) auto 0;
+  margin: var(--offer-section-offset) auto 0;
   padding: 0 0 14px;
   position: relative;
   z-index: 1;
@@ -362,7 +363,7 @@
     --offer-background-reveal: 0px;
     --offer-desktop-bottom-extension: 0px;
     --offer-desktop-vertical-shift: 0px;
-    margin-top: -96px;
+    --offer-section-offset: -114px;
   }
 
   .offerSectionTitle,
@@ -447,7 +448,7 @@
   }
 
   .offerSection {
-    margin-top: -48px;
+    --offer-section-offset: -57px;
   }
 
   .offerSectionLayout {
